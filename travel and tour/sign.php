@@ -1,7 +1,16 @@
 <?php
 include 'connection.php';
-?>
 
+// Check if the user is logged in 
+$loggedIn = false;
+
+
+session_start();
+if (isset($_SESSION['user_id'])) {
+    $loggedIn = true;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,7 +27,9 @@ include 'connection.php';
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
         <style>
-
+body{
+    color: white;
+}
               form {
             background-color: #197e1a9b;
             border-radius: 8px;
@@ -28,9 +39,9 @@ include 'connection.php';
             margin: 20px auto;
         }
 
-    .footer h2 {
+         .footer h2 {
     color: #fff;
-}
+        }
 
 
        
@@ -82,20 +93,13 @@ include 'connection.php';
         <div class="navbar">
             
                 <!-- logo nav/ size adjust--> 
-                <a href="index.html"><img src="IMAGES/DAYO LOGO.png" width="100" 
+                <img src="IMAGES/DAYO LOGO.png" width="100" 
                     height="100"></a>
                     <div id="navLinks" class="nav-links">
 
                     <i class='bx bx-x' onclick="hideMenu()"></i>
                     
-                    <ul class="menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="packages.html">Packages</a></li>
-                        <li><a href="FAQ.html">FAQ</a></li>
-                        <li><a href="transaction.php">Transaction</a></li>
-                        <li><a href="About.html">About</a></li>
-                       <li><a href="sign.html">Log In</a></li>
-                    </ul>
+                   
                     </div>
                 
 <section class="banner"></section>
@@ -108,9 +112,13 @@ include 'connection.php';
   
                 </div>
                 <i class='bx bx-menu-alt-right'onclick="showMenu" ></i>
-            </nav>
+ </nav>
+        </div>
+    </section>
 
 
+
+</div>
     <form action="login_db.php" id="loginForm" method="post">
     <h2>Login</h2>
     
@@ -160,30 +168,28 @@ include 'connection.php';
        <footer>
         <div class="footer-columns">
             <div class="footer-column">
-                <p><a href="About.html">About us</a></p>
-                <p>Activities you can enjoy</p>
-                <p><a href="adventure.html">Adventure</a></p>
-                <p><a href="heritage.html">Heritage</a></p>
-                <p><a href="culinary.html">Culinary</a></p>
+                <p><a href="About_2.html">About us</a></p>
+                 
             </div>
+           
             <div class="footer-column">
-                <p><a href="FAQ.html">Frequently Asked Questions</a></p>
-                <p><a href="terms and condition.html">Terms and Conditions</a></p>
-            </div>
-            <div class="footer-column">
-                <h2>Address</h2>
-                <p>
-                    #65 2nd Floor Decibar Building, Lower Bonifacio, Baguio City, Philippines 
-                    &nbsp;&nbsp;&nbsp;(In front of Caltex Bonifacio)
-                </p>
+               
                 <h2>Contact</h2>
                 <p>
                     (074) 309-6836 / +63 938 589-4505
                     cbstccustomerservice@gmail.com
-                </p>
+                </p> 
+                <h3>Developed by JML</h3>
             </div>
             <div class="footer-column">
-                <h3>Developed by JML</h3>
+
+<h2>Address</h2>
+                <p>
+                    #65 2nd Floor Decibar Building, Lower Bonifacio, Baguio City, Philippines 
+                    &nbsp;&nbsp;&nbsp;(In front of Caltex Bonifacio)
+                </p>
+                
+               
                 
                 
             </div>

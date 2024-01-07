@@ -17,9 +17,59 @@ include 'connection.php';
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+        <style>
+
+body {
+    height: auto;
+    background: linear-gradient(to bottom, #7DC387, #DBE9EA);
+      align-items: center;
+      justify-content: center;
+    
+      color: #333;
+    }
+    .edit-profile {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(254, 254, 254, 0.007);
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.456);
+        }
+
+        .edit-profile form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .edit-profile label {
+            margin-bottom: 8px;
+        }
+
+        .edit-profile input {
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .edit-profile button {
+            padding: 12px;
+            background-color: #19ac14;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .edit-profile button:hover {
+            background-color: #18866a;
+        }
+        </style>
     </head>
 
-<body>
+
     
  <nav>
         <div class="navbar">
@@ -37,8 +87,10 @@ include 'connection.php';
                         <li><a href="plan.html">Make your own Itinerary</a></li>
                         <li><a href="transaction.php">Transaction</a></li>
                         <li><a href="About.html">About</a></li>
-                        <li><a href="settings.html">Profile</a></li>
-                        <li class="right-align"><a href="sign.html">Log Out</a></li>
+                       <li><a href="settings.html">Profile</a></li>
+                       <li class="right-align"><a href="sign.html">Log Out</a></li>
+                    </ul>
+        
                     </ul>
                     </div>
                 
@@ -50,9 +102,7 @@ include 'connection.php';
     });
   </script>
   
-                </div>
-                <i class='bx bx-menu-alt-right'onclick="showMenu" ></i>
-            </nav>
+              
 
 
   
@@ -63,63 +113,26 @@ include 'connection.php';
 
     
 </div>
-<section class="about">
 
+<header>
+    <h1>Edit Profile</h1>
+<section class="edit-profile">
+    <form action="updated_profile.php" method="post">
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="full_name" name="fullname" placeholder="Enter your full name" required>
 
- <h1>What is Dayo Travel Access?</h1>
- <h2>Your Ultimate 
-    Guide to Exploring Luzon in Style and Comfort</h2>
-<p>Ready to embark on an extraordinary journey 
-    through Luzon's breathtaking landscapes and vibrant cultures? 
-    Look no further than Dayo Travel Access! 
-    We're here to make your travel dreams come true, offering an unforgettable experience like no other. Get ready to uncover hidden gems, indulge in comfort, and create lifelong memories. Let's make your travel adventure 
-    truly exceptional with Dayo Travel Access!</p>
+        <label for="new_password">New Password:</label>
+        <input type="password" id="new_password" name="new_password" placeholder="Enter new password">
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm new password">
+
+        <button type="submit">Save Changes</button>
+    </form>
 </section>
 
-
-<div class="rows">
-    <h2>Services</h2>
-    <div class="column" style="background-color:rgb(40, 119, 68);">
-      
-      <p> We offer not only transportation services but also complete travel packages that include accommodation, guided tours, and curated experiences. 
-    </p>
-    </div>
-    <div class="column" style="background-color:rgba(28, 140, 74, 0.867);">
-     
-      <p>We provide personalized itineraries tailored to individual preferences and interests. We offer flexibility for customers to customize their trips, 
-        allowing them to choose specific attractions, activities, and accommodations according to their preferences.</p>
-    </div>
-    <div class="column" style="background-color:#4da97d;">
-      
-      <p> Users can create profiles to save their preferences, track past trips, and store payment information for convenient and faster bookings.
-    </p>
-    </div>
-  </div>
-
-<div class="partner">
-    <h2>Our Partner</h2>
-    <img src="IMAGES/cbstc.png" alt="logo">
-    <p>
-        The economic survey that led to the birth and organization of the 
-        CORDILLERA BASIC SECTORS TRANSPORT COOPERATIVE (CBSTC) started on September 4, 2017 
-        when TASK FORCE EO220 and the Cordillera Basic Sectors Congress conducted Provincial 
-        Federalism Summit in all the Provinces of the Cordillera Administrative Region headed by former 
-        Director of the Cordillera Executive Board-Cordillera Administrative Region (CEB-CAR), former Director 
-        and Secretary General of the Social Reform Agenda-CAR (SRA-CAR), 
-        and former Director of the Department of Agrarian Reform (DAR) JUDE G. WAL.
-    </p>
-    <a href="https://cbstccooperative.com/about">Learn More</a>
-
-</div>
-</div>
-</section>
-
-
-
-
-
-        <script src="script.js"></script>
-
+ 
+</header>
        <!--Footer-->
        <footer>
         <div class="footer-columns">
@@ -154,7 +167,9 @@ include 'connection.php';
     </footer>
 
 
-        <script src="script.js"></script>
+ 
+
+        </script>
 
     </body>
 

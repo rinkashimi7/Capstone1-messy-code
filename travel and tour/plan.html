@@ -21,19 +21,19 @@ include 'connection.php';
 
 body {
     height: auto;
-   
+  
+
       align-items: center;
       justify-content: center;
-      color: #333;
-      color: #333;
+      background: linear-gradient(to bottom, #7DC387, #DBE9EA);
     }
 
     form {
-      background-color: rgba(33, 117, 76, 0.922);
+      background-color: rgba(254, 254, 254, 0.007);
       padding: 40px;
-      color: white;
+      color: rgb(10, 9, 9);
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.456);
       width: 100%;
       max-width: 600px;
     }
@@ -60,7 +60,9 @@ body {
     margin-left: 39%;
 
     }
-
+h1{
+  color: rgb(255, 255, 255);
+}
     button:hover {
       background-color: #18866a;
       text-align: center;
@@ -95,7 +97,7 @@ body {
     }
 
     .destinationRow button {
-        background-color: #55b680;
+        background-color: #247b4b;
         color: #fff;
         padding: 5px 10px; /* Adjusted padding */
         border: none;
@@ -110,6 +112,10 @@ body {
     .removeButton {
         margin-left: 4px; /* Adjusted margin */
     }
+
+   
+
+
         </style>
     </head>
 
@@ -131,7 +137,8 @@ body {
                         <li><a href="plan.html">Make your own Itinerary</a></li>
                         <li><a href="transaction.php">Transaction</a></li>
                         <li><a href="About.html">About</a></li>
-                       <li><a href="sign.html">Log In</a></li>
+                        <li><a href="settings.html">Profile</a></li>
+                        <li class="right-align"><a href="sign.html">Log Out</a></li>
                     </ul>
                     </div>
                 
@@ -164,13 +171,17 @@ body {
  
     <form action="plan_reg.php" method="POST">
       <h2>Enter Your Details:</h2>
+      
       <label for="fullName">Full Name <span>*</span></label>
       <input type="text" id="fullName" name="fullname" required>
-  
+   
      <label for="phoneNumber">Cellphone Number (Philippines) <span>*</span></label>
       <input type="tel" id="phoneNumber" name="cp_num" pattern="[0-9]{11}" placeholder="e.g., 09123456789" required>
-  
-  
+
+   
+
+
+
       <label for="email">Email Address <span>*</span></label>
       <input type="email" id="email" name="email" required>
 

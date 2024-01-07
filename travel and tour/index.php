@@ -34,10 +34,11 @@ include 'connection.php';
                     <ul class="menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="packages.html">Packages</a></li>
-                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="plan.html">Make your own Itinerary</a></li>
                         <li><a href="transaction.php">Transaction</a></li>
                         <li><a href="About.html">About</a></li>
-                       <li><a href="sign.html">Log In</a></li>
+                        <li><a href="settings.html">Profile</a></li>
+                        <li class="right-align"><a href="sign.html">Log Out</a></li>
                     </ul>
                     </div>
                 

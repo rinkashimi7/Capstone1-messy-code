@@ -41,10 +41,10 @@ $row=mysqli_fetch_assoc($sql);
     <h2>Payment Method:</h2>
 <p>NOTE: Only a down payment of 20% is required to reserve the package online. The remaining balance should be paid on the day of travel upon pickup.</p>
 <div>
-    
+  <h3>E-Wallet:</h3>
     <a href=""><img class="Gcash" src="IMAGES/GCash_Logo.png" alt="gcash"></a>
-    
-
+    <h3>BANK ACCOUNT:Landbank</h3>
+    <h3>Account Number:CBSTC-Aurora hill 1371-1982-50</h3>
 </div>
 
 <button type="submit" class="reservation">CONTINUE TO PROCESS</button>

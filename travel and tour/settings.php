@@ -1,7 +1,8 @@
-<?php
-include 'connection.php';
-?>
-
+<?php  
+ //Database connectivity  
+ $con=mysqli_connect('localhost','root','','dayo_travel_access_user_db');  
+ $sql=mysqli_query($con,"select * from registration");  
+ ?>  
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -87,7 +88,10 @@ body {
                         <li><a href="plan.html">Make your own Itinerary</a></li>
                         <li><a href="transaction.php">Transaction</a></li>
                         <li><a href="About.html">About</a></li>
-                       <li><a href="sign.html">Log In</a></li>
+                       <li><a href="settings.html">Profile</a></li>
+                       <li class="right-align"><a href="sign.html">Log Out</a></li>
+                    </ul>
+        
                     </ul>
                     </div>
                 
@@ -99,9 +103,7 @@ body {
     });
   </script>
   
-                </div>
-                <i class='bx bx-menu-alt-right'onclick="showMenu" ></i>
-            </nav>
+              
 
 
   
@@ -116,18 +118,18 @@ body {
 <header>
     <h1>Edit Profile</h1>
 <section class="edit-profile">
-    <form action="updated_profile.php" method="post">
-        <label for="full_name">Full Name:</label>
-        <input type="text" id="full_name" name="fullname" placeholder="Enter your full name" required>
+<form action="updated_profile.php" method="post">
+            <label for="full_name">Full Name:</label>
+            <input type="text" id="full_name" name="fullname" placeholder="Enter your full name" required>
 
-        <label for="new_password">New Password:</label>
-        <input type="password" id="new_password" name="new_password" placeholder="Enter new password">
+            <label for="new_password">New Password:</label>
+            <input type="password" id="new_password" name="new_password" placeholder="Enter new password" required>
 
-        <label for="confirm_password">Confirm Password:</label>
-        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm new password">
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm new password" required>
 
-        <button type="submit">Save Changes</button>
-    </form>
+            <button type="submit">Update Profile</button>
+        </form>
 </section>
 
  

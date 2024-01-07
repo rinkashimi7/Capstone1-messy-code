@@ -1,24 +1,54 @@
 <?php
-include 'connection.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $hostname = "localhost";
+    $username = "root";
+    $password = "";
+    $databaseName = "dayo_travel_access_user_db";
 
+    $connect = mysqli_connect($hostname, $username, $password, $databaseName);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    $fullname = $_POST["fullname"];
-    $new_password = $_POST["new_password"];
-    $confirm_password = $_POST["confirm_password"];
-
-    if (empty($fullname) || empty($new_password) || empty($confirm_password)) {
-        echo "Please fill in all fields.";
-    } else if ($new_password !== $confirm_password) {
-        echo "Passwords do not match.";
-    } else {
-        
-        $user_id = $_SESSION["user_id"]; 
-        $sql = "UPDATE users SET fullname = '$fullname', password = '$new_password' WHERE id = '$user_id'";
-       
-
-        header("Location: updated.html");
-        exit();
+    if (!$connect) {
+        die("Connection failed: " . mysqli_connect_error());
     }
+
+    $fullname = $_POST['fullname'];
+    $newPassword = $_POST['new_password'];
+
+    if (!isset($_POST['confirm_password'])) {
+        echo 'Confirm password field is missing.';
+        exit;
+    }
+
+    $confirmPassword = $_POST['confirm_password'];
+
+    if ($newPassword !== $confirmPassword) {
+        echo 'Passwords do not match.';
+        exit;
+    }
+
+    // Retrieve the entity ID from the registration table
+    $query = "SELECT id FROM registration LIMIT 1";
+    $result = mysqli_query($connect, $query);
+
+    if (!$result) {
+        echo 'Failed to retrieve entity ID. Error: ' . mysqli_error($connect);
+        exit;
+    }
+
+    $row = mysqli_fetch_assoc($result);
+    $id = $row['id'];
+
+    $updateQuery = "UPDATE registration SET fullname = '$fullname', password = '$newPassword' WHERE id = '$id'";
+
+    $result = mysqli_query($connect, $updateQuery);
+
+    if ($result) {
+        header("Location: updated.html");
+        exit;
+    } else {
+        echo 'Failed to update. Error: ' . mysqli_error($connect);
+    }
+
+    mysqli_close($connect);
 }
+?>

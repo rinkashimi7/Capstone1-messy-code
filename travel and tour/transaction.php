@@ -39,7 +39,7 @@ $row=mysqli_fetch_assoc($sql);
                         <li><a href="plan.html">Make your own Itinerary</a></li>
                         <li><a href="transaction.php">Transaction</a></li>
                         <li><a href="About.html">About</a></li>
-                       <li><a href="sign.html">Log In</a></li>
+                        <li><a href="settings.html">Profile</a></li>
                     </ul>
                     </div>
                 
